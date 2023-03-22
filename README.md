@@ -1,2 +1,2 @@
 # Vampir
-#Prva verzija moje igrice Vampir.
+Prva verzija moje igrice Vampir.
