@@ -178,7 +178,7 @@ def check_collision():
 
 def check_bounds():
     if canvas.coords(vampir.img)[0] > 800:
-        canvas.coords(vampir.img, 50, 500)
+        canvas.coords(vampir.img, 50, canvas.coords(vampir.img)[1])
         vampir.bounds = True
     if canvas.coords(vampir.img)[0] < 50:
         canvas.coords(vampir.img, 50, canvas.coords(vampir.img)[1])
@@ -196,6 +196,7 @@ def game_over():
         canvas.delete(ALL)
         canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2,
                            font=('consolas', 70), text="GAME OVER", fill="red")
+        vampir.sudar = False
         os.system("cls")
         root.after(1000, root.quit)
 
