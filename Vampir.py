@@ -5,7 +5,6 @@ import os
 
 os.system("cls")
 
-
 class Vampir:
     def __init__(self):
         self.ukleto_mjesto = PhotoImage(file="ukleto_mjesto.png")
