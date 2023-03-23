@@ -198,7 +198,6 @@ def game_over():
                            font=('consolas', 70), text="GAME OVER", fill="red")
         vampir.sudar = False
         os.system("cls")
-        root.after(1000, root.quit)
 
 
 root = tk.Tk()
