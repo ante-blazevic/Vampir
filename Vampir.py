@@ -195,9 +195,8 @@ def game_over():
         canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2,
                            font=('consolas', 70), text="GAME OVER", fill="red")
         vampir.sudar = False
-        os.system("cls")
         root.after(2000, exit_button_function)
-
+        os.system("cls")
 
 def exit_button_function():
     canvas.destroy()
