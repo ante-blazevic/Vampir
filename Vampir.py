@@ -203,16 +203,7 @@ def game_over():
         canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2,
                            font=("consolas", 70), text="GAME OVER,\nYOUR SCORE: "+str(score), fill="red")
         vampir.sudar = False
-        root.after(2000, exit_button_function)
         os.system("cls")
-
-
-def exit_button_function():
-    canvas.destroy()
-    root.config(bg="green")
-    exit_button = tk.Button(root, text="Izađi iz igre", font=(
-        "consolas", 40), bg="red", fg="yellow", command=root.quit)
-    exit_button.place(x=180, y=200)
 
 
 root = tk.Tk()
