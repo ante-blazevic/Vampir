@@ -183,7 +183,7 @@ def check_bounds():
         if vampir.bounds == True:
             score += 1
             canvas.delete("score_text")
-            canvas.create_text(380, 50, text="SCORE: "+str(score),
+            canvas.create_text(canvas.winfo_width()/2, 50, text="SCORE: "+str(score),
                                font=("consolas", 30), fill="green", tag="score_text")
     if canvas.coords(vampir.img)[0] < 50:
         canvas.coords(vampir.img, 50, canvas.coords(vampir.img)[1])
