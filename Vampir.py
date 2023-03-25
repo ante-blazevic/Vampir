@@ -193,10 +193,11 @@ def game_over():
     if vampir.sudar == True:
         canvas.delete(ALL)
         canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2,
-                           font=('consolas', 70), text="GAME OVER", fill="red")
+                           font=("consolas", 70), text="GAME OVER", fill="red")
         vampir.sudar = False
         root.after(2000, exit_button_function)
         os.system("cls")
+
 
 def exit_button_function():
     canvas.destroy()
@@ -211,9 +212,10 @@ root.geometry("800x500+{}+{}".format(
     int(root.winfo_screenwidth()/2 - 200), int(root.winfo_screenheight()/2 - 100)))
 root.title("Vampir")
 root.resizable(False, False)
+root.config(bg="black")
 root.iconbitmap("vampir_icon.ico")
 
-canvas = tk.Canvas(root, width=800, height=500, bg="white")
+canvas = tk.Canvas(root, width=800, height=500, bg="black")
 canvas.pack()
 
 vampir = Vampir()
