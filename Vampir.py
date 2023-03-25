@@ -173,11 +173,18 @@ def check_collision():
             print("Collision detected!")
             vampir.sudar = True
 
+score = 0
 
 def check_bounds():
+    global score
     if canvas.coords(vampir.img)[0] > 800:
         canvas.coords(vampir.img, 50, canvas.coords(vampir.img)[1])
         vampir.bounds = True
+        if vampir.bounds == True:
+            score += 1
+            canvas.delete("score_text")
+            canvas.create_text(380, 50, text="SCORE: "+str(score),
+                               font=("consolas", 30), fill="green", tag="score_text")
     if canvas.coords(vampir.img)[0] < 50:
         canvas.coords(vampir.img, 50, canvas.coords(vampir.img)[1])
 
@@ -190,10 +197,11 @@ def reset_axes():
 
 
 def game_over():
+    global score
     if vampir.sudar == True:
         canvas.delete(ALL)
         canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2,
-                           font=("consolas", 70), text="GAME OVER", fill="red")
+                           font=("consolas", 70), text="GAME OVER,\nYOUR SCORE: "+str(score), fill="red")
         vampir.sudar = False
         root.after(2000, exit_button_function)
         os.system("cls")
@@ -220,6 +228,9 @@ canvas.pack()
 
 vampir = Vampir()
 axe = Sjekira()
+
+canvas.create_text(380, 50, text="SCORE: 0", font=(
+    "consolas", 30), fill="green", tag="score_text")
 
 root.bind("<Right>", vampir.right)
 
